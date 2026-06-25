@@ -17,7 +17,7 @@ commentaryRouter.get("/", async (req, res) => {
   if (!paramsResult.success) {
     return res
       .status(400)
-      .json({ erros: "Invalid match ID", details: paramsResult.error.issues });
+      .json({ error: "Invalid match ID", details: paramsResult.error.issues });
   }
 
   const queryResult = listCommentaryQuerySchema.safeParse(req.query);
